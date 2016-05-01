@@ -1,0 +1,18 @@
+type命令用来显示指定命令的类型。一个命令的类型可以是如下几种:
+alias 别名
+keyword 关键字,Shell保留字
+function 函数,Shell函数
+builtin 内建命令,Shell内建命令
+file 文件，磁盘文件，外部命令
+unfound 没有找到
+
+
+它是Linux系统的一种自省机制，知道了是哪种类型，我们就可以针对性的获取帮助。比如：
+内建命令可以用help命令来获取帮助，外部命令用man或者info来获取帮助。
+
+常用参数
+type命令的基本使用方式就是直接跟上命令名字。
+type -a可以显示所有可能的类型，比如有些命令如pwd是shell内建命令，也可以是外部命令。
+type -p只返回外部命令的信息，相当于which命令。
+type -f只返回shell函数的信息。
+type -t 只返回指定类型的信息。

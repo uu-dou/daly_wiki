@@ -1,0 +1,16 @@
+#20160313
+1.注释时，注意#前一定要有空格
+2.;;  终止"case"选项，相当于c的break
+3.**  幂运算
+4.$$  进城ID变量
+5.()  a.命令组，在()中的命令将作为一个子shell来运行，其中的变量，对于脚本剩下的部分不可用
+      b.用在数组初始化
+6.{xxx,yyy,zzz...}  cat {file1,file2,file3} > combined_file #把file1,file2,file3连接在一起，并且重定向到combined_file中
+                    注意:大括号中不允许有空白，除非是有意的
+                    echo {file1,file2,file3}\:{\ A," B",' C'}
+
+
+
+
+
+

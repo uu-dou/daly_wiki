@@ -1,0 +1,3 @@
+搜索时要匹配多个字符串
+比如：在/目录下，搜索home abs gx3011
+find / -name *.c|xargs grep 'abs|gx3011' -rE

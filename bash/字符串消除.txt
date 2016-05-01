@@ -1,0 +1,4 @@
+path_name=/home/bozo/ideas/thoughts.for.today
+比如要删除for.
+t=${path_name/for./}
+echo $t

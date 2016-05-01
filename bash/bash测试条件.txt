@@ -1,0 +1,44 @@
+测试整数:
+选项 	描述 	英文全称
+eq 	等于 	equal
+gt 	大于 	greater than
+lt 	小于 	less than
+ne 	不等于 	not equal
+ge 	大于等于 	greater or equal
+le 	小于等于 	less or equal
+
+
+测试字符串:
+test $str1 = $str2 	测试是否相等，相等返回1
+test $str1 != $str2 	测试是否不等，不等返回1
+test $str1 \< $str2 	如果str1的字典序在str2之前，则返回1
+test $str1 \> $str2 	如果str1的字典序在str2之后，则返回1
+test $str1 	如果不为空返回1
+test -n $str1 	如果不为空返回1
+test -z $str1 	如果是空串，返回1
+
+
+测试文件:
+针对单个文件
+d 	是否为目录
+f 	是否为普通文件
+x 	是否有执行权限
+r 	是否有读权限
+w 	是否写读权限
+e 	是否存在
+s 	文件大小是否大于0
+c 	是否为字符设备文件
+b 	是否为块设备文件
+
+针对两个文件
+用法 	描述
+test file1 -nt file2 	测试file1的修改时间是不是比file2 new(晚)
+test file1 -ot file2 	测试file1的修改时间是不是比file2 old（早）
+test file1 -ef file2 	测试两者是相同的设备和具有相同的结点（inode）数
+
+
+逻辑运算
+逻辑运算就是与或非。
+    -a 逻辑与
+    -o 逻辑或
+    ! 逻辑非

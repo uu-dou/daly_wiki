@@ -1,0 +1,14 @@
+: ${variablename?"ERROR MESSAGE"}
+如果variablename没有被set，那么这个脚本将以一个ERROR MESSAGE输出，并终止
+
+例如：
+#!/bin/bash
+# usage-message.sh
+
+: ${1?"Usage: $0 ARGUMENT"}
+
+echo $1
+
+exit 0
+
+

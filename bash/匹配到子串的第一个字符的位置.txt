@@ -1,0 +1,8 @@
+expr index $string $substring
+
+stringZ=abcABC123ABCabc
+echo `expr index "$stringZ" C12`  #6
+
+echo `expr index "$stringZ" 1c`     #3
+
+相当于C语言中的strchr();

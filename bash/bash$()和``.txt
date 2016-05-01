@@ -1,0 +1,7 @@
+使用$(...)机制进行的变量赋值(除去使用``来赋值的另外一种新方法).事实上这两种方法都是
+命令替换的一种形式.
+# 来自于/ect/rc.d/rc.local
+R=$(cat /ect/redhat-release)
+arch=$(uname -m)
+
+a=`echo Hello!`

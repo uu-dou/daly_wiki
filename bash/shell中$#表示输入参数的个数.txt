@@ -1,0 +1,33 @@
+在shell中$#表示输入参数的个数
+
+在shell中#用来获取一些和长度，个数相关的信息:
+shell中定义一个数组:
+        arrayname=(value1  value2   ...   valuen);
+
+获取数组元素的个数:
+        那么${#arrayname[@]}表示数组中元素的个数。
+
+特别注意:
+         在shell中分隔符是空格" "，不能用","。
+
+获取数组中的一个元素:
+         $arrayname[index]
+
+修改该数组中的一个元素:
+        arrayname[index]=新值
+
+获取数组中的所有元素:
+       ${arrayname[*]}
+      所以遍历数组就变成为:
+      for value in   ${arrayname[*]}
+      do
+                  echo $value
+      done
+                                
+在shell中获取一个变量的长度
+shell中定义一个变量是:
+       value=“hello”;
+       那么${#value}表示数组中元素的个数。
+ 
+那么同样的道理，要获取数组中某个变量的长度:
+      ${#arrayname[index]}

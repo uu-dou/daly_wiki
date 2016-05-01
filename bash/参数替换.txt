@@ -1,0 +1,31 @@
+${parameter-default},${parameter:-default}
+${parameter=default},${parameter:=default}
+如果 parameter 没被 set,那么就使用 default.
+注意:${parameter-default}和${parameter:-default}大部分时候是相同的.额外的":"在 parameter 被声明为空的时候，不同
+
+举例子：
+username0=
+echo "username0=$(username0-`whoami`)"
+#将不会输出username0=
+echo "username0=$(username0:-`whoami`)"
+#将会输出username0=jindg
+
+如果脚本中并没有传入命令行参数,那么 default parameter 将被使用.
+1 DEFAULT_FILENAME=generic.data
+2 filename=${1:-$DEFAULT_FILENAME}
+
+
+=============================================================================================================
+${parameter+alt_value},${parameter:+alt_value}
+如果 parameter 被 set 了,那就使用 alt_value,否则就使用 null 字符串.
+这两种办法绝大多数时候用法都一样,只有在$parameter 被声明并设置为空的时候,
+会有区别
+
+============================================================================================================
+${parameter?err_msg}, ${parameter:?err_msg}
+如果 parameter 被 set,那就是用 set 的值,否则 print err_msg.
+这两种办法绝大多数时候用法都一样,只有在$parameter 被声明并设置为空的时候,
+会有区别
+
+
+
