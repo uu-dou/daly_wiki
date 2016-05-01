@@ -1,0 +1,3 @@
+svn ci -m $'first line\nsecond line' 
+注意是''不是“”
+

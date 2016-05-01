@@ -1,0 +1,13 @@
+使用scp命令必须先开启SSH服务
+
+1、拷贝本机/home/administrator/test整个目录至远程主机192.168.1.100的/root目录下
+scp -r /home/administrator/test/ root@192.168.1.100:/root/
+
+2. 拷贝单个文件至远程主机
+scp /home/administrator/Desktop/old/driver/test/test.txt root@192.168.1.100:/root/
+
+其实上传文件和文件夹区别就在参数 -r， 跟cp, rm的参数使用差不多， 文加价多个 -r
+
+3、远程文件/文件夹下载
+举例，把192.168.62.10上面的/root/文件夹，下载到本地的/home/administrator/Desktop/new/下，使用远程端的root登陆
+scp -r root@192.168.62.10:/root/ /home/administrator/Desktop/new/

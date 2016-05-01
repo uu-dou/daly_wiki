@@ -1,0 +1,6 @@
+
+bin转文本：
+xxd -c1 -i -p gx3011_20160406_1110.bin > mrs.txt
+
+文本转bin：
+xxd -r -p signature.txt > signature.bin

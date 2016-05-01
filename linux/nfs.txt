@@ -1,0 +1,25 @@
+单板如何通过mount上本机或者服务器上的文件夹
+
+首先确认服务器的nfs是否安装
+sudo apt-get install nfs-server
+
+然后修改：
+打开/etc/exports：sudo vim /etc/exports
+增加：
+/home/jindg    (rw,sync,no_root_squash)
+
+通过exportfs命令来重新加载/etc/exports文件
+sudo exportfs -a
+
+查看服务器的ip
+ifconfig
+
+在单板中
+新建一个文件夹
+mkdir mnt
+
+然后mount
+mount -t nfs -o nolock 192.168.1.117:/home/jindg /mnt
+注意不能使用~当成home目录
+
+然后你就看到mnt上就有home/jindg

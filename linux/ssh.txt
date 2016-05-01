@@ -1,0 +1,22 @@
+在Ubuntu下开启SSH首先要确认你是否配置了IP，如果没有用以下命令进行配置：
+
+  1.sudo ifconfig eth0 192.168.0.3 netmask 255.255.255.0  //配置你的eth0网卡的ip地址和子网掩码
+  2. duso route default gw 192.168.0.1 //配置你的默认路由
+
+开启ssh服务
+1.查看是否有sshd_config
+   cat /etc/ssh/sshd_config  //查看是否有sshd_config文件
+2.如果没有进行安装
+    sudo apt-get install opensshd-server  //安装sshd-server，Ubuntu缺省安装了openssh-client,如果你的没有安装，用apt-get install 进行安装即可。
+3.查看sshsever是否启动
+   ps -e |grep ssh 
+   1207 ?        00:00:00 ssh-agent
+ 21834 ?        00:00:00 sshd
+   如果看到sshd则表示sshserver已经启动，如果只有ssh-agent，则表示没有启动，用
+   sudo /etc/init.d/ssh start 启动sshserver
+4.ssh-server的配置文件位于 /etc/ssh/sshd_config，在这里可以定义SSH的服务端口，默认端口是22，你可以自己定义成其他端口号，如222。然后用以下命令重启SSH服务：
+    sudo /etc/init.d/ssh restart
+5. 还可以用sudo netstart -tlp 命令来检测， 如果看到：
+    tcp6       0      0 [::]:ssh                [::]:*
+    就表示sshserver启动正常。
+   通过客户端就可以访问了。

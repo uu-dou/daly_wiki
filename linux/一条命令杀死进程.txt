@@ -1,0 +1,4 @@
+
+
+比如要杀死studio
+ps -aux|grep studio|awk '{print $2}'| xargs kill -9

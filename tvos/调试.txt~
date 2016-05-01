@@ -1,0 +1,9 @@
+logcat -s DTHTEST DTHServiceAD DTHServiceImpl DTHDB
+
+cp /mnt/libdthservice.so /usr/lib/ && cp /mnt/service_dth /usr/bin && cp /mnt/content_shell /usr/bin/browser/
+
+ps |grep 'browser_full|service_dth' -rE|awk '{print $1}'|xargs kill
+
+cp bin/dth_test ~/tftpboot/ && cp bin/service_dth ~/tftpboot/ && cp lib/share/libdthservice.so ~/tftpboot/
+
+make libdthservice && make service_dth && make dth_test

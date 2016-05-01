@@ -1,0 +1,52 @@
+bjdump命令的使用
+
+objdump -f test
+显示test的文件头信息
+
+
+objdump -d test
+反汇编test中的需要执行指令的那些section
+
+
+
+objdump -D test
+与-d类似，但反汇编test中的所有section
+
+
+objdump -h test
+显示test的Section Header信息
+
+
+
+objdump -x test
+显示test的全部Header信息
+
+
+
+objdump -s test
+除了显示test的全部Header信息，还显示他们对应的十六进制文件代码
+
+
+
+举例：
+将C源代码和反汇编出来的指令对照：
+1.
+编译成目标文件（要加-g选项）
+gcc -g -o test.c
+
+
+2.
+输出C源代码和反汇编出来的指令对照的格式
+objdump -S test.o
+
+
+如何对任意一个二进制文件进行反汇编？
+我们可以这样做：
+objdump -D -b binary -m i386 a.bin
+-D表示对全部文件进行反汇编，-b表示二进制，-m表示指令集架构，a.bin就是我们要反汇编的二进制文件
+
+objdump -m可以查看更多支持的指令集架构，如i386:x86-64，i8086等
+
+
+另外上面的所有objdump命令的参数同样适用于arm-linux-objdump。
+同时我们也可以指定big-endian或little-endian（-EB或-EL），我们可以指定从某一个位置开始反汇编等。所以objdump命令是非常强大的！

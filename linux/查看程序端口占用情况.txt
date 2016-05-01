@@ -1,0 +1,7 @@
+Linux查看程序端口占用情况
+
+使用命令：netstat –apn 
+
+
+netstat   -anp   |   grep  portno
+即：netstat –apn | grep 8080

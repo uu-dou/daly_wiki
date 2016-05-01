@@ -1,0 +1,11 @@
+HISTSIZE 
+定义了 history 命令输出的记录数
+
+HISTFILESIZE
+定义了在文件 ~/.bash_history 中保存命令的记录总数
+
+HISTTIMEFORMAT的配置
+直接在文件 ~/.bashrc参数HISTFILESIZE下一行加如下代码：
+HISTTIMEFORMAT='<%F %T> : '  
+那么利用 history 命令输出的命令记录应该向下面这个样子：
+419 <2013-05-28 16:04:45> : history 
