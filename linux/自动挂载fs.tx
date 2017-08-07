@@ -1,0 +1,8 @@
+开启服务：service autofs restart
+
+因为/etc/autofs.conf 中有 master_map_name = /etc/auto.master 
+所以在 /etc/auto.master 增加： /mnt/254 /etc/auto.254 --timeout=100 
+
+auto.254的内容:
+bu3 -fstype=cifs,rw,noperm,username=jindg,password=Jj!19860517a ://192.168.0.254/bu3
+

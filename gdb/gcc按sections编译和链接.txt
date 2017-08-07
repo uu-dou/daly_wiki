@@ -1,0 +1,3 @@
+CFLAGS += -fdata-sections -ffunction-sections
+LDFLAGS += -Wl,--gc-sections 
+LDFLAGS += -Wl,--print-gc-sections //会将去掉没有用到的section给打印出来

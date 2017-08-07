@@ -14,7 +14,12 @@ sudo exportfs -a
 查看服务器的ip
 ifconfig
 
-在单板中
+单板：
+单板中先要确定内核是否支持nfs，通过cat /proc/filesystems
+如果显示nodev nfs，表示内核有支持NFS。
+
+###设置网络ifconfig
+
 新建一个文件夹
 mkdir mnt
 

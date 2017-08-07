@@ -1,0 +1,2 @@
+1. sudo adduser 你的用户名 vboxusers
+2. 退出，重新登陆

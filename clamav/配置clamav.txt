@@ -1,0 +1,2 @@
+1. 如果发现不能升级main.cvd库，则执行：sudo dpkg-reconfigure clamav-freshclam
+2. 不输出扫描的所有文件，只输出被感染的文件： sudo clamscan -r --bell -i /

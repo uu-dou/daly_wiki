@@ -1,0 +1,3 @@
+aux_source_directory(base BASE_SRC)
+aux_source_directory(util UTIL_SRC)
+list(APPEND SRC ${BASE_SRC} ${UTIL_SRC})#注意APPEND必须大写

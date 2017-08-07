@@ -1,0 +1,60 @@
+First stop Docker
+
+service docker stop
+
+Copy everything from /var/lib/docker to my new destination, which is /mnt/extra in my case
+
+cd /var/lib
+sudo rsync -a docker /mnt/extra/
+
+Remove the docker directory
+
+sudo rm -rf docker
+
+Create a static link
+
+sudo ln -s /mnt/extra/docker docker
+
+Edit the /etc/default/docker file
+
+sudo vi /etc/default/docker
+
+Modify this line
+
+#DOCKER_OPTS="--dns 8.8.8.8 --dns 8.8.4.4"
+
+Changing it to this
+
+DOCKER_OPTS="--dns 8.8.8.8 --dns 8.8.4.4 -g /mnt/extra/docker"
+
+Restart Docker
+
+service docker start
+
+To test perms etc use this command
+
+docker run -it ubuntu bash
+
+
+
+
+On Ubuntu 16.04 (using systemd) you have to change the systemd unit file /lib/systemd/system/docker.service and add "-g /data/docker/" to the ExecStart directive. Should look like this then:
+
+ExecStart=/usr/bin/docker daemon -H fd:// -g /path/to/docker/
+
+Don't forget to do systemctl daemon-reload afterwards...
+
+
+
+docker可以支持把一个宿主机上的目录挂载到镜像里。
+docker run -it -v /home/dock/Downloads:/usr/Downloads ubuntu64 /bin/bash
+
+
+
+
+
+
+
+
+
+

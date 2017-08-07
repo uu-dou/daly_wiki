@@ -9,3 +9,10 @@ cp bin/dth_test ~/tftpboot/ && cp bin/service_dth ~/tftpboot/ && cp lib/share/li
 make libdthservice && make service_dth && make dth_test
 
 mount -t nfs -o nolock 192.168.1.100:/home/tftpboot /mnt
+
+
+
+
+编译msp/api。需要将
+cp libhi_msp.a ../../../pub/lib/static/
+然后再去sample，clean后make

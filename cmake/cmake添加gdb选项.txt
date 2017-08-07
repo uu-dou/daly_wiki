@@ -1,0 +1,11 @@
+CMake添加gdb选项
+
+1.一般情况下，我们的做法是使用set命令，修改CMake文件，例如：
+
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+
+2.我们也可以使用环境变量的方法，例如：
+
+mkdir Debug
+cd Debug
+cmake -DCMAKE_BUILD_TYPE=Debug ..

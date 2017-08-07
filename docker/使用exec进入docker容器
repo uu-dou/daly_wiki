@@ -1,0 +1,13 @@
+exec 命令
+
+docker exec 是Docker內建的命令。下面示範如何使用該命令。
+
+$ sudo docker run -idt ubuntu
+243c32535da7d142fb0e6df616a3c3ada0b8ab417937c853a9e1c251f499f550
+
+$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+243c32535da7        ubuntu:latest       "/bin/bash"         18 seconds ago      Up 17 seconds                           nostalgic_hypatia
+
+$sudo docker exec -ti nostalgic_hypatia bash
+root@243c32535da7:/#
